@@ -2,8 +2,6 @@
 # Website scraper
 
 class Website:
-    # when object is made will get request from website
-    # takes to strings
     def __init__(self, url, regexin):
         import re
         self.url = url
@@ -13,7 +11,6 @@ class Website:
         self.data = requests.get(url).content
         self.data = re.search(self.regexin, self.data, flags=re.DOTALL)
         print("got "+url)
-    # performs regex and out puts to file
     def output(self, theregex, fileoutname):
         import re
         print("sorting data with regex"+theregex)
